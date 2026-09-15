@@ -1,0 +1,7 @@
+<h1>Log#create</h1>
+
+<%= form_for @log do |f| %>
+  <%= f.label :name, "Log upload" %>
+  <%= f.file_field :log_file %>
+  <%= f.submit "Create Job" %>
+<% end %>

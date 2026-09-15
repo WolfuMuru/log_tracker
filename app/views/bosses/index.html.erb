@@ -1,0 +1,28 @@
+<div class="flex flex-col gap-4">
+  <h1 class="text-2xl font-bold">Bosses</h1>
+
+  <div>
+    <%= button_to "Upload Log", new_log_path, method: :get,
+        class: "px-3 py-2 bg-blue-400 text-white rounded-lg" %>
+  </div>
+
+  <div class="p-1 bg-gray-200 rounded-lg">
+    <select name="boss_id">
+      <% @bosses.each do |boss| %>
+        <option value="<%= boss.id %>">
+          <%= boss.name %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="pt-2">
+    <% @logs.each do |log| %>
+      <div class="pt-1 border-y border-grey">
+        <% if log.log_file.attached? %>
+          <%= log.log_file.filename %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
