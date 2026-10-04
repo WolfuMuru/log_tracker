@@ -1,7 +1,31 @@
-<h1>Log#create</h1>
+<div class="flex flex-col gap-4">
+  <h1 class="text-2xl font-bold">Upload Log</h1>
+  <%= form_for @log do |f| %>
+    <div class="mx-auto max-w-lg rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+      <div class="mb-6">
+        <%= f.label :name, "Log upload", class: "block text-sm font-semibold text-gray-900" %>
+        <p class="mt-1 text-sm text-gray-500">
+          Upload the log file you want to process.
+        </p>
+      </div>
 
-<%= form_for @log do |f| %>
-  <%= f.label :name, "Log upload" %>
-  <%= f.file_field :log_file %>
-  <%= f.submit "Create Job" %>
-<% end %>
+      <div class="mb-6">
+        <%= f.file_field :log_file,
+                         class: "block w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-700
+                file:mr-4 file:cursor-pointer file:border-0 file:bg-gray-100 file:px-4 file:py-2.5
+                file:text-sm file:font-medium file:text-gray-700
+                hover:file:bg-gray-200
+                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" %>
+      </div>
+
+      <div class="flex justify-end">
+        <%= f.submit "Upload Log",
+                     class: "rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm
+                transition hover:bg-blue-700
+                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
