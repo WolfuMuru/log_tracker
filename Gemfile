@@ -69,6 +69,6 @@ gem "json", "= 2.21.2"
 
 gem "tailwindcss-rails", "~> 4.6"
 
-gem "rubyzip", "~> 3.6"
+gem "rubyzip", "~> 3.7"
 
 gem "byebug", "~> 13.0", :groups => [:development, :test]
